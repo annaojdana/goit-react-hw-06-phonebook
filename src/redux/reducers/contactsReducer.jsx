@@ -1,14 +1,12 @@
 import { createReducer } from '@reduxjs/toolkit';
+import contactsItems from "data/contactsItems";
 
-const initialState = [];
+
+const initialState = contactsItems;
 
 const contactsReducer = createReducer(initialState, {
-  addContact: (state, { payload }) => {
-    return (state = [payload, ...state]);
-  },
-  deleteContact: (state, { payload }) => {
-    return (state = state.filter(c => c.id !== payload));
-  },
+  addContact: (state, { payload }) => state = [payload, ...state],
+  deleteContact: (state, { payload }) => state = state.filter(c => c.id !== payload)
 });
 
 export default contactsReducer;
