@@ -13,11 +13,10 @@ const ContactList = () => {
   const filter = useSelector(state => state.filter);
 
   const filteredContacts = contacts
-    .filter(c => c.name.toLowerCase().includes(filter))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .filter(c => c.name.toLowerCase().includes(filter));
 
   const dispatch = useDispatch();
-  
+
   return (
     <>
       {filteredContacts.length > 0 ? (

@@ -13,8 +13,10 @@ const App = () => {
         <ContactForm />
       </Section>
       <Section title="Contacts">
-        <Filter />
-        <ContactList />
+        <>
+          <Filter />
+          <ContactList />
+        </>
       </Section>
     </div>
   );

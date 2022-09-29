@@ -5,10 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/actions/contactsActions';
 import { nanoid } from '@reduxjs/toolkit';
 
-const INITIAL_STATE = {
-  name: '',
-  number: '',
-};
 
 const ContactForm = () => {
   const { form, form__field, label, input } = styles;
