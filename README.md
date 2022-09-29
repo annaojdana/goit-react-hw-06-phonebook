@@ -2,7 +2,7 @@
 Projekt powstał w ramach kursu FULLSTACK PROGRAMISTA OD ZERA od GoIT
 
 Stona pracy:
-> [https://annaojdana.github.io/goit-react-hw-04-hooks-phonebook/](https://annaojdana.github.io/goit-react-hw-04-hooks-phonebook/)
+> [https://annaojdana.github.io/goit-react-hw-06-phonebook/](https://annaojdana.github.io/goit-react-hw-06-phonebook/)
 
 ## Szczegóły projektu
 
