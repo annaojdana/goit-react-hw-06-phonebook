@@ -1,22 +1,24 @@
 import styles from './Filter.module.css';
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/actions/filterActions';
 
-
-const Filter = ({ onChange }) => {
+const Filter = () => {
   const { field, text, input } = styles;
 
+  const dispatch = useDispatch();
+
+  const filterValue = e => {
+    const value = e.target.value.toLowerCase();
+    dispatch(setFilter(value));
+  };
+
   return (
-   <div className={field}>
-        <p className={text}>Find contact by name</p>
-        <input className={input} type="text" onChange={onChange} />
-      </div>
+    <div className={field}>
+      <p className={text}>Find contact by name</p>
+      <input className={input} type="text" onChange={filterValue} />
+    </div>
   );
 };
 
-
 export default Filter;
-
-Filter.propTypes = {
-  onChange: PropTypes.func
-};

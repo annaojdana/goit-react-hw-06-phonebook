@@ -4,6 +4,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/actions/contactsActions';
 
+
+
 const ContactList = () => {
   const { wrapper, text, button } = styles;
 
@@ -15,6 +17,7 @@ const ContactList = () => {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const dispatch = useDispatch();
+  
   return (
     <>
       {filteredContacts.length > 0 ? (
