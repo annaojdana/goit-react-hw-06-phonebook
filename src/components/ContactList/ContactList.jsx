@@ -12,8 +12,8 @@ const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
 
-  const filteredContacts = contacts
-    .filter(c => c.name.toLowerCase().includes(filter));
+
+  const filteredContacts = contacts.filter(c => c.name.toLowerCase().includes(filter));
 
   const dispatch = useDispatch();
 
