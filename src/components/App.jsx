@@ -4,25 +4,29 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import React from 'react';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+import { Notification } from './Notification/Notification';
 import { useSelector } from 'react-redux';
 
 const App = () => {
   const { wrapper } = styles;
 
-  const contactsList = useSelector(state => {
-    return state.contacts;
-  });
+  const contactsList = useSelector(state => state.contacts);
   console.log(contactsList);
+
   return (
     <div className={wrapper}>
       <Section title="Phonebook">
         <ContactForm />
       </Section>
       <Section title="Contacts">
-        <>
-          <Filter />
-          <ContactList />
-        </>
+        {contactsList.length > 0 ? (
+          <>
+            <Filter />
+            <ContactList />
+          </>
+        ) : (
+          <Notification message="Your phonebook is empty" />
+        )}
       </Section>
     </div>
   );
