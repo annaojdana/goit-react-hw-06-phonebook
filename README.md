@@ -10,7 +10,7 @@ Zadanie zostało wykonane według [kryteriów](https://github.com/goitacademy/re
 
 ## Technologie
 - REACT
-- JSX
+- REDUX/REDUX TOOLKIT
 - CSS
 - JS
 
