@@ -4,18 +4,21 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/actions/contactsActions';
 
-
-
 const ContactList = () => {
   const { wrapper, text, button } = styles;
 
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
 
-
-  const filteredContacts = contacts.filter(c => c.name.toLowerCase().includes(filter));
+  const filteredContacts = contacts.filter(c =>
+    c.name.toLowerCase().includes(filter)
+  );
 
   const dispatch = useDispatch();
+
+  const deleteItemContact = id => {
+    return dispatch(deleteContact(id));
+  };
 
   return (
     <>
@@ -28,7 +31,7 @@ const ContactList = () => {
                 <button
                   type="button"
                   className={button}
-                  onClick={() => dispatch(deleteContact(contact.id))}
+                  onClick={() => deleteItemContact(contact.id)}
                 >
                   Delete
                 </button>
