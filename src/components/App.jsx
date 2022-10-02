@@ -11,7 +11,7 @@ const App = () => {
   const { wrapper } = styles;
 
   const contactsList = useSelector(state => state.contacts);
-  console.log(contactsList);
+ 
 
   return (
     <div className={wrapper}>
